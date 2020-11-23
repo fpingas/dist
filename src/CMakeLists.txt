@@ -14,7 +14,9 @@ set(SOURCE_LIST "entrypoint.cpp" "execution.cpp" "lexing.cpp")
 add_library(dist_lib ${SOURCE_LIST} ${HEADER_LIST} ${GENERATED_FILES})
 
 # We need this directory, and users of our library will need it too
-target_include_directories(dist_lib PUBLIC ../include ${INC_PATH})
+target_include_directories(dist_lib PUBLIC ../include ${re2_SOURCE_DIR})
+
+target_link_libraries(dist_lib PRIVATE re2)
 
 # All users of this library will need at least C++17
 target_compile_features(dist_lib PUBLIC cxx_std_17)

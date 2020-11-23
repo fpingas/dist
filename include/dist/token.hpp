@@ -31,7 +31,7 @@ enum class token_type {
   tok_class,
   tok_else,
   tok_false,
-  tok_fun,
+  tok_function,
   tok_for,
   tok_if,
   tok_null,
